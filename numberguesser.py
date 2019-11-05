@@ -19,13 +19,15 @@ def check_input():
             return guess
 
 
-while guess_taken < 7:
-    check_input()
-    if guess == number: # this fails "unresolved reference"
-        print("You win!  " + guess_taken + " attempts needed.")
+while guess_taken < 6:
+    guess = check_input()
+    if guess == number:
+        guess_taken = guess_taken + 1
+        print("You win!  " + str(guess_taken) + " attempts needed.")
+        break
     else:
         guess_taken = guess_taken + 1
-        print(f"{guess_taken} attempts taken out of 6")
-        check_input()
+        print(f"Nope, try again. {guess_taken} attempts taken out of 6")
+        continue
 else:
     print(f"You lose! I was thinking of {number}")
