@@ -17,12 +17,11 @@ def check_input():
             continue
         else:
             return guess
-            break
 
 
 while guess_taken < 7:
     check_input()
-    if guess == number:
+    if guess == number: # this fails "unresolved reference"
         print("You win!  " + guess_taken + " attempts needed.")
     else:
         guess_taken = guess_taken + 1
